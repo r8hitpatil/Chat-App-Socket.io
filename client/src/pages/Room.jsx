@@ -28,7 +28,7 @@ const Room = () => {
   // };
 
   useEffect(() => {
-    const newSocket = io("http://localhost:3000"); // why no ws: ?
+    const newSocket = io('https://chat-app-rect.onrender.com'); // why no ws: ?
 
     newSocket.on("connect", () => {
       if (roomId) {
