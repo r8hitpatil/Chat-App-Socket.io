@@ -5,9 +5,9 @@ import Contact from "./Contact";
 import Home from "./Home";
 
 const LandingPage = () => {
-  const HomeImg = <img src={"src/assets/Home.svg"} />;
-  const AboutImg = <img src={"src/assets/About.svg"} />;
-  const ContactImg = <img src={"src/assets/Contact.svg"} />;
+  const HomeImg = <img src={"/Home.svg"} />;
+  const AboutImg = <img src={"/About.svg"} />;
+  const ContactImg = <img src={"/Contact.svg"} />;
 
   const dockItems = [
     {
@@ -24,7 +24,7 @@ const LandingPage = () => {
       title: "Contact",
       icon: ContactImg,
       to: "#contact",
-    }
+    },
   ];
 
   return (
