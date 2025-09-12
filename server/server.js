@@ -12,6 +12,7 @@ app.use(express.json());
 app.use(cors({
   origin: [
     'http://localhost:5173',
+    'https://chat-app-rct.onrender.com',
     'https://chat-app-rect.onrender.com'
   ]
 }));
@@ -19,7 +20,7 @@ app.use(cors({
 const server = http.createServer(app);
 const io = new Server(server, {
     cors : {
-        origin : ['http://localhost:5173','https://chat-app-rect.onrender.com']
+        origin : ['http://localhost:5173','https://chat-app-rct.onrender.com','https://chat-app-rect.onrender.com']
     }
 });
 dotenv.config();
