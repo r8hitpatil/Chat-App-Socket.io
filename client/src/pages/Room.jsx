@@ -28,7 +28,10 @@ const Room = () => {
   // };
 
   useEffect(() => {
-    const newSocket = io('https://chat-app-rect.onrender.com'); // why no ws: ?
+    const newSocket = io(import.meta.env.VITE_SOCKET_URL || 'https://chat-app-rect.onrender.com', {
+      transports: ['websocket', 'polling'],
+      path: '/socket.io/'
+    }); // Uses environment variable for flexibility
 
     newSocket.on("connect", () => {
       if (roomId) {
