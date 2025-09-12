@@ -9,7 +9,7 @@ import VerticalTiles from "@/components/animata/container/VerticalTiles";
 
 const Room = () => {
   const sendImg = (
-    <img src={"/src/assets/Send.svg"} alt="" className="invert" />
+    <img src={"/Send.svg"} alt="" className="invert" />
   );
   const [sentMessage, setSentMessage] = useState(""); // why not null
   const [socket, setSocket] = useState(null);
