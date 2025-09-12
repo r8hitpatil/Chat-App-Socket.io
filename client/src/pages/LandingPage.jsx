@@ -28,24 +28,28 @@ const LandingPage = () => {
   ];
 
   return (
-    <div className="h-screen overflow-y-scroll ">
-      <div className="fixed bottom-10 flex w-full items-center justify-center z-10">
+    <div className="h-screen overflow-y-scroll">
+      {/* Mobile-responsive navigation dock */}
+      <div className="fixed bottom-4 md:bottom-10 flex w-full items-center justify-center z-10 px-4">
         <AnimatedDock
           items={dockItems}
-          largeClassName="mt-10 bg-black gap-7"
-          smallClassName="fixed left-1/2 -translate-x-1/2 gap-7"
+          largeClassName="mt-10 bg-black gap-4 md:gap-7 px-4 py-2 rounded-full"
+          smallClassName="fixed left-1/2 -translate-x-1/2 gap-4 md:gap-7 px-4 py-2 rounded-full bg-black"
         />
       </div>
-      <section id="home" className="h-screen flex items-center justify-center">
+      
+      {/* Home Section */}
+      <section id="home" className="min-h-screen flex items-center justify-center">
         <Home />
       </section>
-      <section id="about" className="h-screen flex items-center justify-center">
+      
+      {/* About Section */}
+      <section id="about" className="min-h-screen flex items-center justify-center">
         <About />
       </section>
-      <section
-        id="contact"
-        className="h-screen flex items-center justify-center"
-      >
+      
+      {/* Contact Section */}
+      <section id="contact" className="min-h-screen flex items-center justify-center">
         <Contact />
       </section>
       {/* <h1>LandingPage</h1>
