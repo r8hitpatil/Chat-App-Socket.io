@@ -79,7 +79,7 @@ function ModalForm(props) {
       const responseData = res.data;
       if (res.status === 201 && responseData) {
         console.log(data);
-        nav('/Room');
+        nav(`/Room/${data.roomId}`);
         form.reset();
       }
     } catch (error) {
