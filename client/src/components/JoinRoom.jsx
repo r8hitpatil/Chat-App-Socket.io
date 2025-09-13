@@ -30,16 +30,15 @@ export function JoinRoom() {
   const formId = "modal-form";
 
   return (
-    <div className="w-full">
-      <div className="flex justify-center">
-        <Dialog>
-          <DialogTrigger asChild>
-            <InteractiveHoverButton className="pt-3 pb-3 px-6 md:px-8 text-sm md:text-base w-full sm:w-auto">
-              Join In
-            </InteractiveHoverButton>
-          </DialogTrigger>
+    <div className="w-full flex justify-center">
+      <Dialog>
+        <DialogTrigger asChild>
+          <InteractiveHoverButton className="pt-3 pb-3 px-6 md:px-8 text-sm md:text-base w-full max-w-[140px] md:w-auto md:max-w-none md:min-w-[140px] flex items-center justify-center">
+            Join In
+          </InteractiveHoverButton>
+        </DialogTrigger>
 
-          <DialogContent className="w-[95vw] max-w-md mx-auto">
+        <DialogContent className="w-[95vw] max-w-md mx-auto">
             <DialogHeader>
               <DialogTitle>Join Room</DialogTitle>
             </DialogHeader>
@@ -58,8 +57,7 @@ export function JoinRoom() {
           </DialogContent>
         </Dialog>
       </div>
-    </div>
-  );
+    );
 }
 
 function ModalForm(props) {

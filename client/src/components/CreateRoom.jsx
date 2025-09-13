@@ -30,16 +30,15 @@ export function CreateRoom() {
   const formId = "modal-form";
 
   return (
-    <div className="w-full">
-      <div className="flex justify-center">
-        <Dialog>
-          <DialogTrigger asChild>
-            <ShimmerButton className="px-6 md:px-8 text-sm md:text-base w-full sm:w-auto">
-              Create Room
-            </ShimmerButton>
-          </DialogTrigger>
+    <div className="w-full flex justify-center">
+      <Dialog>
+        <DialogTrigger asChild>
+          <ShimmerButton className="px-6 md:px-8 text-sm md:text-base w-full max-w-[140px] md:w-auto md:max-w-none flex items-center justify-center">
+            Create Room
+          </ShimmerButton>
+        </DialogTrigger>
 
-          <DialogContent className="w-[95vw] max-w-md mx-auto">
+        <DialogContent className="w-[95vw] max-w-md mx-auto">
             <DialogHeader>
               <DialogTitle>Create Room</DialogTitle>
             </DialogHeader>
@@ -58,8 +57,7 @@ export function CreateRoom() {
           </DialogContent>
         </Dialog>
       </div>
-    </div>
-  );
+    );
 }
 
 function ModalForm(props) {

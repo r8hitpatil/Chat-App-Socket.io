@@ -30,11 +30,11 @@ const LandingPage = () => {
   return (
     <div className="h-screen overflow-y-scroll">
       {/* Mobile-responsive navigation dock */}
-      <div className="fixed bottom-4 md:bottom-10 flex w-full items-center justify-center z-10 px-4">
+      <div className="fixed bottom-4 md:bottom-10 left-1/2 transform -translate-x-1/2 z-10">
         <AnimatedDock
           items={dockItems}
-          largeClassName="mt-10 bg-black gap-4 md:gap-7 px-4 py-2 rounded-full"
-          smallClassName="fixed left-1/2 -translate-x-1/2 gap-4 md:gap-7 px-4 py-2 rounded-full bg-black"
+          largeClassName="bg-black/80 backdrop-blur-lg gap-6 px-6 py-3 rounded-full border border-white/20"
+          smallClassName="bg-black/80 backdrop-blur-lg gap-3 px-4 py-3 rounded-full border border-white/20"
         />
       </div>
       

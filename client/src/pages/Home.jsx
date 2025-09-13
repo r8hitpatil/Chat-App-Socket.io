@@ -33,13 +33,9 @@ const Home = () => {
         </div>
         
         {/* Buttons */}
-        <div className="flex flex-col sm:flex-row gap-4 md:gap-6 w-full max-w-md justify-center">
-          <div className="flex-1 flex justify-center">
-            <JoinRoom/>
-          </div>
-          <div className="flex-1 flex justify-center">
-            <CreateRoom/>
-          </div>
+        <div className="flex flex-col sm:flex-row gap-4 md:gap-6 w-full max-w-sm md:max-w-md justify-center items-center">
+          <JoinRoom/>
+          <CreateRoom/>
         </div>
       </div>
     </div>
