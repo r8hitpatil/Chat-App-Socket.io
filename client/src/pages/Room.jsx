@@ -73,23 +73,32 @@ const Room = () => {
   }, [roomId]);
 
   const sendinMsg = () => {
+    if (!sentMessage.trim()) return; // Don't send empty messages
+    
     const messageObject = {
-      text: sentMessage,
+      text: sentMessage.trim(),
       type: "sent",
       timestamp: new Date(),
     };
-    if (socket && sentMessage) {
+    if (socket && sentMessage.trim()) {
       console.log(messageObject);
       setRMessages((prev) => [...prev, messageObject]);
-      socket.emit("message", sentMessage);
+      socket.emit("message", sentMessage.trim());
       setSentMessage("");
     }
   };
 
+  const handleKeyPress = (e) => {
+    if (e.key === 'Enter' && !e.shiftKey) {
+      e.preventDefault();
+      sendinMsg();
+    }
+  };
+
   return (
-    <div>
-      <div className="relative h-screen w-full rounded-lg border bg-background">
-        <div className="absolute inset-0 bg-bl">
+    <div className="h-screen overflow-hidden">
+      <div className="relative h-full w-full bg-background">
+        <div className="absolute inset-0">
           <FlickeringGrid
             className="absolute inset-0 size-full"
             squareSize={3}
@@ -98,32 +107,37 @@ const Room = () => {
             maxOpacity={0.15}
             flickerChance={3}
           />
-          <div className="absolute inset-0 flex mt-10 justify-center z-20">
-            <div className="fixed w-[600px] h-[550px]  flex items-center justify-center">
+          
+          {/* Chat Messages Container - Responsive */}
+          <div className="absolute inset-x-4 md:inset-x-8 lg:inset-x-auto lg:left-1/2 lg:transform lg:-translate-x-1/2 top-4 md:top-8 bottom-24 md:bottom-28 z-20 lg:w-[600px]">
+            <div className="w-full h-full bg-white/90 backdrop-blur-sm rounded-lg border shadow-xl">
               <ChatMessages messages={rMessages} className="w-full h-full"/>
             </div>
           </div>
           
           {/* Notification Bubble Popup */}
           {notification && (
-            <div className="fixed top-20 left-1/2 transform -translate-x-1/2 z-50 animate-bounce">
+            <div className="fixed top-16 md:top-20 left-1/2 transform -translate-x-1/2 z-50 animate-bounce px-4">
               <VerticalTiles>
-                <ShimmerButton>
-                {notification}
+                <ShimmerButton className="text-sm md:text-base">
+                  {notification}
                 </ShimmerButton>
               </VerticalTiles>
             </div>
           )}
-          <div className="absolute bottom-10 left-0 right-0 flex justify-center z-30">
-            <div className="relative w-full max-w-150">
+          
+          {/* Input Area - Responsive */}
+          <div className="absolute bottom-4 md:bottom-6 left-4 right-4 md:left-8 md:right-8 lg:left-1/2 lg:transform lg:-translate-x-1/2 lg:w-[600px] z-30">
+            <div className="relative">
               <ShimmerButton className="absolute inset-0 w-full h-full rounded-xl border-2 shadow-xl pointer-events-none" />
-              <div className="relative z-10 flex items-center gap-2 p-3 pointer-events-auto  rounded-4xl">
+              <div className="relative z-10 flex items-center gap-2 md:gap-3 p-3 md:p-4 pointer-events-auto rounded-xl">
                 <input
                   type="text"
                   placeholder="Enter here"
                   value={sentMessage}
                   onChange={(e) => setSentMessage(e.target.value)}
-                  className="flex-1 h-10 px-4 rounded-md outline-none text-md"
+                  onKeyPress={handleKeyPress}
+                  className="flex-1 h-10 md:h-12 px-4 rounded-md outline-none border-none text-sm md:text-base bg-white/90 backdrop-blur-sm"
                 />
                 <ShinyButton
                   className="h-10 flex items-center px-4 border-none outline-none"
