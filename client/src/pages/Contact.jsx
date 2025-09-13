@@ -7,32 +7,32 @@ const Contact = () => {
     {
       name: "Email",
       icon: Mail,
-      href: "mailto:your-email@example.com", // Replace with your email
+      href: "mailto:dev.rohitpatil.25@example.com", // Replace with your email
       color: "hover:text-blue-500",
       description: "Drop me a line",
     },
     {
       name: "GitHub",
       icon: Github,
-      href: "https://github.com/yourusername", // Replace with your GitHub
+      href: "https://github.com/rohitpatilgithub", // Replace with your GitHub
       color: "hover:text-gray-700 dark:hover:text-gray-300",
       description: "Check out my code",
     },
     {
       name: "LinkedIn",
       icon: Linkedin,
-      href: "https://linkedin.com/in/yourprofile", // Replace with your LinkedIn
+      href: "https://www.linkedin.com/in/rohit-patil-486076254/", // Replace with your LinkedIn
       color: "hover:text-blue-600",
       description: "Let's connect professionally",
     },
     {
       name: "Twitter",
       icon: Twitter,
-      href: "https://twitter.com/yourusername", // Replace with your Twitter
+      href: "https://x.com/maiengineerhu", // Replace with your Twitter
       color: "hover:text-blue-400",
       description: "Follow my thoughts",
     },
-  ];
+  ]
 
   return (
     <div className="min-h-screen py-12 md:py-20">
