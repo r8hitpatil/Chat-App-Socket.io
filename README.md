@@ -1,11 +1,11 @@
 # Chat App with Socket.io
 
+## 📋 Project Description
+This is a real-time temporary chat application built using React (frontend) and Node.js with Socket.io (backend). Users can join chat rooms and communicate with each other in real time without requiring registration or login.
+
 [Live Link](https://chat-app-rct.onrender.com/)
 
 <img width="1895" height="899" alt="image" src="https://github.com/user-attachments/assets/a153594a-e45a-4800-8e2f-61ea7f9fa5aa" />
-
-## 📋 Project Description
-This is a real-time temporary chat application built using React (frontend) and Node.js with Socket.io (backend). Users can join chat rooms and communicate with each other in real time without requiring registration or login.
 
 ## 📁 Folder Structure
 ```
